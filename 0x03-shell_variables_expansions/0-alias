@@ -1,0 +1,14 @@
+#!/bin/bash 
+
+# create a script that creates an alias
+  # name: "ls"
+  # value: "rm *"
+
+args=$* # get the args
+
+for file in $args; do # loop over each arg (file)
+  
+  
+  # create an alias
+  echo $file
+done 
