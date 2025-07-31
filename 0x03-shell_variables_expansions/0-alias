@@ -1,2 +1,3 @@
 #!/bin/bash 
-args=$* # get the args
+args=$*
+echo "$args"
