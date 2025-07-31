@@ -1,7 +1,2 @@
 #!/bin/bash
-
-# 1. Hello you: create a script that prints "hello user", where the user is the current linux user
-
-linux_user=$USER
-
-echo "Hello $linux_user"
+echo "Hello $USER"
