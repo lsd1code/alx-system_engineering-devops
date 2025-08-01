@@ -1,7 +1,2 @@
 #!/bin/bash
-paths=$(echo $PATH | tr ":" " ")
-count=0
-
-for path in ${paths}; do
-    count=$(($count + 1))
-done
+echo $(echo $PATH | tr ":" " ") | wc -w
