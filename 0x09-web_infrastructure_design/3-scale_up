@@ -1,0 +1,15 @@
+# Scaling Up 
+
+## Load Balancing Cluster
+
+- Create a group of load balancers that work together to distribute the traffic across multiple backend servers.
+- This will enhance the availability, scalability, and performance.
+- Configure the load balancers to communicate with each other, forming a cluster, which will allow load balancers to monitor each other's health if one instance becomes unavailable
+- We can configure rules to determine how traffic is distributed 
+- We can also user the lad balancer's API to monitor the health of the cluster, track performance metrics, and troubleshoot issues  
+
+## Scaling
+
+- `Horizontal Scaling` allows us to add more servers which can improve performance by distributing the workload, increasing capacity and enhancing redundancy
+- A load balancer is crucial for effective utilization of this technique. It distributes incoming traffic across the available servers, ensuring no single server is overwhelmed
+- Adding more servers increases infrastructure costs, including hardware, maintenance, and energy consumption
