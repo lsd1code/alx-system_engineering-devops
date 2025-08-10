@@ -2,7 +2,7 @@
 
 ## Components
 
-- `Load Balancer`: 
+- `Load Balancer`: responsible for directing web traffic to multiple instances of our web server
 
 - `Web Server (NGINX)`: responsible for accepting incoming http/https request from the client
 
@@ -20,6 +20,12 @@ Utilizing the right load balancing algorithm help distribute incoming requests a
 
 As our application is still growing, we will utilize the `Active-Passive` load balancing strategy where one server will be active and handling all incoming requests, while the passive server will remain on standby. This setup is relatively simple to configure and manage since only one server needs to be active at a time. It ensures a predictable failover mechanism since we know that our passive server will be active in an event of a failure. Switching from active server to passive server might introduce a slight delay. 
 
-
-
 This approach is simple and time-tested. 
+
+##  Master-Slave Database Architecture
+
+The `master-slave` database architecture is replication setup where one database(master) will handle all write operations, while other databases(slaves) replicate the data from the master and handle read operations. This architecture lets our application scale-out and accommodate the rising number of users by distributing load across slave nodes
+
+The architecture has the ability to provide reliable backups through chain of slave databases, and any slave node can be turned off without affecting the entire structure. The data from master node is constantly being replicated to slave nodes, ensuring that data will remain intact even if the master database fails.
+
+It is extremely fast at data retrieval, imposing no restrictions regarding performance and time to load the data.
