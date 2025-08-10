@@ -1,1 +1,42 @@
 # Web Infrastructure
+
+## Components
+
+- `Client`: makes a request and receives a response from the server
+
+- `Server (nginx)`: responsible for accepting incoming http/https request from the client
+
+- `Application Server (Django)`: responsible for executing our application code, and communicates with the database
+
+- `Database (MySQL)`: responsible for storing data, and enforcing data integrity
+
+
+## Request/Response Cycle
+
+1. Client makes a request to `www.foobar.com` which get resolved by the DNS and sends a request to our server
+
+2.1 The client and server will communicate using HTTP, which is inherently stateless, meaning that each request-response pair does not retain session information between requests.
+
+2.2 HTTP operates over the TCP/IP protocol suite, while HTTPS uses TLS/SSL encryption over TCP for secure communication
+
+3. The web server acts as a reverse proxy by forwarding dynamic requests to the application server 
+
+4. Our application server that was built using Django will be responsible for handling `User Authentication`, `Apartment Listing`, `Booking Management`, and `Payment Processing` 
+
+5. Database will be responsible for data storage and retrieval. MySQL database is perfect for storing relational data that is has a normalized schema 
+
+
+## Potential Issues
+
+- `Single Point of Failure`: 
+  + It is not reliable because a single bug can bring down the whole monolithic application
+  + DEveloping new features becomes costly and also makes the overall development process much longer 
+
+
+- `Downtime (Maintenance)`: 
+  + The error in the codebase can affect the entire application's availability
+  + A small change to our application requires the redeployment of the entire application
+
+
+- `Scalability`: 
+  + You cannot scale components individually, the only option is to scale the entire application 
