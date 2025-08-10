@@ -1,5 +1,8 @@
 # Scaling Up 
 
+![Simple Web Stack Diagram](web-infra4.png)
+
+
 ## Load Balancing Cluster
 
 - Create a group of load balancers that work together to distribute the traffic across multiple backend servers.
