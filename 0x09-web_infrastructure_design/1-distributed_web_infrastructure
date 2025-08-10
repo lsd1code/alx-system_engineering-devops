@@ -1,0 +1,25 @@
+# Distributed Web Infrastructure
+
+## Components
+
+- `Load Balancer`: 
+
+- `Web Server (NGINX)`: responsible for accepting incoming http/https request from the client
+
+- `Application Server`: responsible for executing our application code, and communicates with the database
+
+- `Database (MySQL)`:responsible for storing data, and enforcing data integrity
+
+## Process
+
+As the traffic to our application increases, performance issues will likely occur and the application will start taking longer to process requests due to the volume of requests coming in, because web applications can only handle so many requests per second.
+
+Our two servers will host multiple identical instances of our monolithic application which are deployed on different servers or virtual machines. The traffic will be directed to a load balancer which the distributes the load between our multiple instances of the application. These instances will interact with the same single instance of the database. 
+
+Utilizing the right load balancing algorithm help distribute incoming requests across multiple instances to ensure reliability, minimize latency, and prevent overload. Our load balancer will utilize the `Weighted Round Robin` algorithm for redirecting traffic. This algorithm assigns a `weight` to each server based on the server's capabilities, the requests will be distributed proportionally with higher weights receiving a larger share of the traffic. It utilizes efficient use of resources based the server's capabilities.
+
+As our application is still growing, we will utilize the `Active-Passive` load balancing strategy where one server will be active and handling all incoming requests, while the passive server will remain on standby. This setup is relatively simple to configure and manage since only one server needs to be active at a time. It ensures a predictable failover mechanism since we know that our passive server will be active in an event of a failure. Switching from active server to passive server might introduce a slight delay. 
+
+
+
+This approach is simple and time-tested. 
