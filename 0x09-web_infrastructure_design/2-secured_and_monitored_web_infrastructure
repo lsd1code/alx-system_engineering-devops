@@ -1,0 +1,46 @@
+# Secured and Monitored Web Infrastructure
+
+
+
+## SSL Cert and HTTPS
+
+- SSL certificates contain the website public key, identity information, and the CA's digital signature. They serve to verify the website's authenticity and facilitate the encryption process
+
+- HTTPS operates by layering SSL on top of the standard HTTP protocol. It establishes a secure connection through TLS handshake,and provides essential security for online transactions and data exchange, safe guarding user privacy and protecting against cyber threats 
+
+## Firewall (Layered Security Approach)
+
+- This approach is used to protect different network segments and application tiers
+- This design often aligns with a three-tier app architecture and aims to achieve defense-in-depth
+
+### Parameter firewall 
+
+- Situated at the very edge of the application, it is responsible for filtering incoming traffic based on IP addresses, ports, and basic protocol rules.  
+
+### DMZ Firewall
+
+- Positioned between the DMZ and the internal application tier. It provides advanced protection for app by inspecting http/s traffic, and controls the flow between the DMZ(where the web servers resides), the application server
+
+### Internal Firewall
+
+- Located between the application server and the database. It controls access to sensitive data, and limits connections from the app servers to the database. Thus preventing access to the database even if the application tier is compromised
+
+## Monitoring
+
+- This involves observing and managing the performance, availability, and reliability of a web application.
+
+### Website monitoring
+
+- Focuses on the overall performance and availability of a web app, including response times, uptime and potential downtimes
+
+### Infrastructure monitoring 
+
+- Involves tracking the performance of the underlying infrastructure components like servers, and databases
+
+## How the App is Monitored
+
+- `Synthetic`: this involves simulating user interactions and monitoring the response to identify potential issues
+
+- `Real User Monitoring`: Capturing data from actual user sessions to understand how user experience the app
+
+- `Logging and Alerting`: Logs provide detailed records of events, while alerting the teams of potential issues  
