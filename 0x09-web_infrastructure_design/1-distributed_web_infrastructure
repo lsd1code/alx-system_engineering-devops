@@ -1,5 +1,8 @@
 # Distributed Web Infrastructure
 
+![Simple Web Stack Diagram](web-infra2.png)
+
+
 ## Components
 
 - `Load Balancer`: responsible for directing web traffic to multiple instances of our web server
@@ -29,3 +32,21 @@ The `master-slave` database architecture is replication setup where one database
 The architecture has the ability to provide reliable backups through chain of slave databases, and any slave node can be turned off without affecting the entire structure. The data from master node is constantly being replicated to slave nodes, ensuring that data will remain intact even if the master database fails.
 
 It is extremely fast at data retrieval, imposing no restrictions regarding performance and time to load the data.
+
+
+## Potential Issues
+
+- `Single Point of Failure`:
+    + If all our data is stored on a single database, a failure of that service leads to data loss
+    + The consequences might lead to downtime, which can disrupt services and lead to loss of productivity and revenue  
+
+
+- `Security Issues`
+    + Not having a `firewall` exposes the application to unauthorized access and malicious traffic from outside traffic, and anyone can potentially access the application creating opportunities for cyber-attacks.
+    + Without `https`, data transmitted over the internet is vulnerable to interception and modification by malicious actors, usually on public networks 
+    + Unauthorized access can lead to data breaches, resulting in downtime and financial losses
+
+
+- `Monitoring`
+    + Failure to monitor can lead to increased security risks, leading to undetected breaches, delayed incident responses, and reputational harm. 
+    + Security incidents may go unnoticed, delaying time it takes to detect and respond to threats
